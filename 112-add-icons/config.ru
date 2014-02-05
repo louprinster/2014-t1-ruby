@@ -15,9 +15,6 @@ require 'action_view' # for Rails form helpers
 # The project root directory
 root = ::File.dirname(__FILE__)
 
-require 'rack/piwik'
-use Rack::Piwik, piwik_url: "http://www.davincicoders2013.info/analytics/"
-
 # Other Rack Middleware
 use Rack::ShowStatus      # Nice looking 404s and other messages
 use Rack::ShowExceptions  # Nice looking errors

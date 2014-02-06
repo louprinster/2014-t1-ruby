@@ -1,32 +1,51 @@
-Home
-Profile
-Messages
+<ul class="nav nav-tabs">
+  <li class="active"><a href"#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Messages</a></li>  
+</ul>
 
 <br>
 
-This box has a non-functioning X button to close it.
-
-A B
-A1 B1
-A2 B2
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  This box has a non-functioning X button to close it.
+</div>
 
 <br>
 
-Green button
+<table class="table">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+  </tr>
+  <tr>
+    <td>A1</td>
+    <td>B1</td>
+  </tr>
+  <tr class="warning">
+    <td>A2</td>
+    <td>B2</td>
+  </tr>
+</table>
 
-<a href="http://www.google.com">
+<br>
+
+<button type="button" class="btn btn-success">Green button</button>
+
+<a href="http://www.google.com" class="btn btn-default disabled" role="button">
   Link to google.com
 </a>
 
 <br>
 <br>
 
-This column is on the left half of the page.
-This column is on the right half of the page.
-
+<div class="row">
+  <div class="col-md-6">This column is on the left half of the page.</div>
+  <div class="col-md-6">This column is on the right half of the page.</div>
+</div>
 <br>
-
+<span class="glyphicon glyphicon-fast-backward"></span>
 Rewind symbol
 <br>
-
+<span class="glyphicon glyphicon-fast-forward"></span>
 Fast-forward symbol

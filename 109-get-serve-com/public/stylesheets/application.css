@@ -1,3 +1,35 @@
 body {
   font-family: sans-serif;
 }
+
+.navigation {
+background-color: darkred;
+padding: 30px 60px 30px 60px;
+color: white;
+}
+
+.nav-link {
+padding: 50px 0 0 0;
+}
+
+.a {
+  color: red;  
+}
+
+.logo {
+font-size: 50pt;
+font-family: cursive;
+font-weight: bold;
+}
+
+.latest-news {
+font-size:18pt;
+background-color: #C2E0FF;
+padding:25px;
+}
+
+.footer {
+background-color:#E6B8B8;
+padding: 40px 100px;
+font-size:10pt;
+}

@@ -1,3 +1,20 @@
 <h1>Apartments</h1>
 
-<!-- TODO: fill this part in -->
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Address</th>
+    <th>Rent</th>
+    <th>Allows pets?</th>
+    <th>Link</th>
+  </tr>
+  <% Apartment.order(:id).each do |apt| %>
+    <tr>
+      <td><%= apt.id %></td>
+      <td><%= apt.address %></td>
+      <td>$<%= apt.rent_per_month %>.00</td>
+      <td><%= apt.does_allow_pets %></td>
+      <td><a href="<%= apt.url %>">Go to ad on Craigslist</a></td>
+    </tr>
+  <% end %>
+</table>

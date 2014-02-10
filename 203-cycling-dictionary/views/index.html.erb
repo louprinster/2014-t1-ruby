@@ -1,3 +1,14 @@
 <h1>Cycling dictionary</h1>
 
-<!-- TODO: fill this out -->
+<ul>
+  
+    <% CyclingDefinition.order(:id).each do |row| %>
+      <li>  
+        <p>
+          <b><%= row.word %></b> <i>(<%= row.part_of_speech %>)</i><br>
+          <%= row.definition %>
+        </p>
+      </li>
+    <% end %>
+
+</ul>

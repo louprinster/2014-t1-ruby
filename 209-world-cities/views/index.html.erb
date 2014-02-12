@@ -1,8 +1,21 @@
 <h1>World cities</h1>
 
-<!-- TODO: write this -->
+<table class="table">
 
-<p>
-Here's an example flag image:
-<img src="/images/uk.png">
-</p>
+  <tr>
+    <th>City name</th>
+    <th>Country flag</th>
+    <th>Time zone</th>
+    <th>Population</th>
+  </tr>
+
+  <% WorldCity.order(:name).each do |row| %>
+    <tr>
+      <td><%= row.name %>, <%= row.country %></td>  
+      <td><img src="/images/<%= row.flag_filename %>"</td>
+      <td><%= row.timezone %></td>
+      <td><%= row.pop_in_millions %>,000,000</td>
+  </tr>
+  <% end %>
+  
+</table>

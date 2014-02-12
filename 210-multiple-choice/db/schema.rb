@@ -11,9 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140212200406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "muliple_choice_problems", force: true do |t|
+  end
+
+  create_table "problems", force: true do |t|
+    t.string  "equation"
+    t.integer "choice1"
+    t.integer "choice2"
+    t.integer "choice3"
+    t.integer "choice4"
+  end
 
 end

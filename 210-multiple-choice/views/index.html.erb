@@ -1,3 +1,16 @@
 <h1>Multiple choice test</h1>
 
-<!-- TODO: write this -->
+<% Problem.order(:id).each do |row| %>
+
+  <h2>Problem #<%= row.id %></h2>
+
+  What is <%= row.equation %>?<br>
+
+  <ul>
+    <li>A. <%= row.choice1 %> </li>
+    <li>B. <%= row.choice2 %> </li>
+    <li>C. <%= row.choice3 %> </li>
+    <li>D. <%= row.choice4 %> </li>
+  </ul>
+
+<% end %>

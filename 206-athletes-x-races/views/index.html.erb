@@ -1,3 +1,21 @@
 <h1>Track &amp; Field race times</h1>
 
-<!-- TODO: fill this out -->
+<table class="table table-bordered">
+
+  <tr>
+    <th></th>
+    <% RaceName.order(:name).each do |event| %>
+      <th><%= event.name %></th>
+    <% end %>
+  </tr>
+
+  <% Athlete.order(:name).each do |person| %>
+    <tr>
+      <th><%= person.name %></th>
+      <% RaceName.order(:name).each do |event| %>
+        <td>__________:___</td>
+      <% end %>
+    </tr>
+  <% end %>
+
+</table>

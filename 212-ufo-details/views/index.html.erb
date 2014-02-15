@@ -1,3 +1,7 @@
 <h1>UFO sightings</h1>
 
-<!-- TODO: Write this -->
+<% UfoSighting.order(:when_seen).each do |row| %>
+  <p>
+    <a href="/ufo-sightings/<%= row.id %>"><%= row.when_seen %> in <%= row.location %></a>
+  </p>
+<% end %>

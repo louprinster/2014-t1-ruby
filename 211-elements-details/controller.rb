@@ -4,4 +4,8 @@ get "/" do
   halt erb(:index)
 end
 
-# TODO: write handler for detail page route
+get "/elements/:route" do
+  id = params["route"]
+  @element = Element.find(id) 
+  halt erb(:show)
+end

@@ -1,3 +1,26 @@
 <h1>World cities</h1>
 
-<!-- TODO: write this part -->
+<table class="table table-bordered">
+  
+  <tr>
+    <th>City name</th>
+    <% WorldCity.order(:id).each do |x| %>
+      <td><%= x.name %></td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <th>Country</th>
+    <% WorldCity.order(:id).each do |x| %>
+      <td><img src="/images/<%= x.country_flag_filename %>"> <%= x.country %></td>
+    <% end %>
+  </tr>
+  
+    <tr>
+    <th>More details</th>
+    <% WorldCity.order(:id).each do |x| %>
+      <td><a href="/world-cities/<%= x.id %>">Details</a></td>
+    <% end %>
+  </tr>
+  
+</table>

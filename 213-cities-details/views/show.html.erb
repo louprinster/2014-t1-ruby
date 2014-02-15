@@ -1,17 +1,33 @@
-<!-- TODO: write this part -->
+<!-- Assuming parameter passed is city name, not id -->
 
-Example grid:
-<br>
+<h1><%= @city.name %> "<i><%= @city.nickname %>"</i></h1>
 
 <div class='row'>
-  <div class='col-md-4'>.</div>
-  <div class='col-md-4'>.</div>
-  <div class='col-md-4'>.</div>
+  <div class='col-md-4'><b>Country</b></div>
+  <div class='col-md-4'><b>Time zone</b></div>
+  <div class='col-md-4'><b>Population</b></div>
 </div>
+
+<div class='row'>
+  <div class='col-md-4'><img src="/images/<%= @city.country_flag_filename %>"> <%= @city.country %></div>
+  <div class='col-md-4'>UTC+0<%= @city.time_zone_offset %>00</div>
+  <div class='col-md-4'><%= @city.population_in_millions %> million</div>
+</div>
+
 <br>
 
 <div class='row'>
-  <div class='col-md-4'>.</div>
-  <div class='col-md-4'>.</div>
-  <div class='col-md-4'>.</div>
+  <div class='col-md-4'><b>Official URL</b></div>
+  <div class='col-md-4'></div>
+  <div class='col-md-4'><b>River</b></div>
+</div>
+
+
+<div class='row'>
+  <div class='col-md-4'>
+    <a href="<%= @city.official_url %>"><%= @city.official_url %>
+    </a>
+    </div>
+  <div class='col-md-4'></div>
+  <div class='col-md-4'><%= @city.river %></div>
 </div>

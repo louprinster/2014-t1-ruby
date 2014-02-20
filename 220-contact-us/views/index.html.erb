@@ -1,6 +1,23 @@
 <h1>Contact Us</h1>
 
-<!-- TODO: write this part -->
+<h2>Subject</h2>
+<%= text_field_tag "subject",
+    "",
+    placeholder: "Enter subject",
+    size: 50  %>
+
+<br>
+
+<h2>Body</h2>
+<%= text_area_tag "body",
+    "",
+    placeholder: "Enter body",
+    rows: 5, cols: 50 %>
+
+<br></br>
+<p>
+<%= submit_tag "Send Message" %>
+</p>
 
 <hr>
 <h3>Messages so far:</h3>

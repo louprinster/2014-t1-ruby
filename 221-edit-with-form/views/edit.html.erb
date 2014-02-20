@@ -1,1 +1,25 @@
-<!-- TODO: write this to match the mockup -->
+<h1>Edit patient #<%= @patient.id %></h1>
+
+<p>
+  <%= label_tag "systolic" %>
+  <br>
+  <%= text_field_tag "systolic", @patient.systolic %>
+</p>
+
+<p>
+  <%= label_tag "diastolic" %>
+  <br>
+  <%= text_field_tag "diastolic", @patient.diastolic %>
+</p>
+
+<%= submit_tag "Update" %>
+
+<!-- Here is html equivalent for above erb -->
+
+<!-- <form> -->
+<!--   <label>Systolic</label><br> -->
+<!--   <input type="text" name="systolic" value="<%= @patient.systolic %>"><br> -->
+<!--   <label>Diastolic</label><br> -->
+<!--   <input type="text" name="diastolic" value="<%= @patient.diastolic %>"><br><br> -->
+<!--   <input type="submit" value="Update"> -->
+<!-- </form> -->

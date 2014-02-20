@@ -12,3 +12,11 @@ get "/patients/:id" do
 end
 
 # TODO: write POST handler
+post "/patients/:id" do
+  id = params["id"]
+  @patient = Patient.find(id)
+  @patient.systolic = params["systolic"]
+  @patient.diastolic = params["diastolic"]
+  @patient.save!
+  redirect "/"
+end

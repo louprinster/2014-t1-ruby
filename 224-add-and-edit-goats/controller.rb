@@ -6,6 +6,7 @@ get "/" do
 end
 
 get "/new_goat" do
+# Initialize @goat to create blank initial values for each item displayed in view
   @goat = RacingGoat.new
   halt erb(:edit_or_new)
 end

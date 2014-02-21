@@ -1,1 +1,12 @@
-<!-- TODO: write this to look like the mockup -->
+<h1>Customize Line <%= @line.id %></h1>
+
+<%= label_tag "Font size" %>
+<br>
+<%= text_field_tag "font_size", @line.font_size %>
+(between 8 and 12)
+<br>
+<%= label_tag "Text" %>
+<br>
+<%= text_field_tag "text", @line.text, size: 30 %>
+<br>
+<%= submit_tag "Update"%>

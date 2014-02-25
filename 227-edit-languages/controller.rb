@@ -11,6 +11,7 @@ get "/new_language" do
 end
 
 post "/new_language" do
+  raise
   @language = Language.new
   @language.name = params["name"]
   @language.num_speakers = params["num_speakers"]

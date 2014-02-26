@@ -116,15 +116,13 @@ end
 post "/review" do
   @customer = Customer.find(1)
   
-  raise params["commit"].inspect
-
   # TODO: If Go Back was clicked, go back to the previous page
   if params["commit"] == "Go Back"
     redirect "/billing"
   
   # TODO: If Place Order was clicked, go to thank_you page
   elsif params["commit"] == "Place Order"
-    redirect "/thank you"
+    redirect "/thank_you"
   end
   
 end

@@ -15,7 +15,13 @@
       <td><%= e.id %></td>
       <td><%= e.first_name %></td>
       <td><%= e.last_name %></td>
-      <td>TODO</td>
+      <td>
+          <% if e.company_id == nil %>
+            None
+          <% else %>
+            <%= Company.find_by(id: e.company_id).name %>
+             (<%= Company.find_by(id: e.company_id).stock_symbol %>)</td>
+          <% end %>
     </tr>
   <% end %>
 
@@ -25,7 +31,13 @@
       size: 10 %></td>
     <td><%= text_field_tag "last_name", @new_employee.last_name,
       size: 10 %></td>
-    <td>TODO</td>
+    <td><%= select_tag "company_id", 
+              options_from_collection_for_select(
+                Company.order(:id), 
+                :id,
+                "name", 
+                @new_employee.company_id),
+              prompt: "Choose company..." %></td>
     <td><%= submit_tag "Add" %></td>
   </tr>
 

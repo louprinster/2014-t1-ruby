@@ -6,6 +6,7 @@
       <a href="/players/<%= player.id %>">
         <%= player.name %>
       </a>
+      is on the <%= Team.find_by(id: player.team_id).name %> team
     </li>
   <% end %>
 </ul>

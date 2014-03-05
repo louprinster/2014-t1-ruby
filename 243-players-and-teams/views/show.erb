@@ -4,5 +4,7 @@
 
 <p>
   <b>Name</b><br>
-  <%= @player.name %>
+  <%= @player.name %><br>
+  <b>Team name</b><br>
+  <%= Team.find_by(id: @player.team_id).name %>
 </p>

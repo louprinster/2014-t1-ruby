@@ -3,12 +3,19 @@
 <table class="table">
   <tr>
     <th>Name</th>
+    <th>Author</th>
   </tr>
   <% @recipes.each do |recipe| %>
     <tr>
       <td>
         <a href="/recipe/<%= recipe.name %>">
           <%= recipe.name %>
+        </a>
+      </td>
+      <td>
+        <% author_name = Author.find_by(id: recipe.author_id).first_name %>
+        <a href="/by_author/<%= "#{author_name}" %>" >
+          <%= author_name %>
         </a>
       </td>
     </tr>

@@ -13,3 +13,11 @@ get "/recipe/:name" do
 end
 
 # Add handler for routes like GET /by-author/Jim and GET /by-author/Jen
+
+get "/by_author/:first_name" do
+  author_name = params["first_name"]
+  author = Author.find_by(first_name: author_name)
+  @recipes = author.recipes
+  @title = "Recipes by #{author_name}"
+  halt erb(:index)
+end

@@ -1,1 +1,36 @@
 <!-- TODO: Write HTML and ERb to match the mockup -->
+
+<p>
+<%= label_tag "color", "Favorite Color" %>
+<br>
+<%= select_tag "color",
+      options_for_select(["red", "blue", "green"], 
+      @color),
+      prompt: "Choose your favorite color..." %>
+</p>
+<p>
+<%= label_tag "letter", "Favorite letter" %>   
+<br>
+<%= radio_button_tag "letter", "A", @letter == "A" %>
+&nbsp;
+<%= label_tag "letter_a", "A" %>
+&nbsp;
+<%= radio_button_tag "letter", "B", @letter == "B" %>
+&nbsp;
+<%= label_tag "letter_b", "B" %>
+&nbsp;
+<%= radio_button_tag "letter", "C", @letter == "C" %>
+&nbsp;
+<%= label_tag "letter_c", "C" %>
+</p>
+<p>
+<%= label_tag "number", "Favorite Number" %>
+<br>
+<%= text_field_tag "number", @number, size: 20 %>
+</p>
+<%= submit_tag "Update preferences" %>
+<p>
+<a href="/logout">Logout</a>
+</p>
+
+<!-- QUES: Noticed you can use session[:variable] instead of @vars in html, but is this not convention? -->

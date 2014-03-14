@@ -1,1 +1,18 @@
 <!-- TODO: write ERb to match the mockup for the Registration page -->
+<h2>Register new user</h2>
+
+<p>
+  <%= label_tag :username, "Username" %><br>
+  <%= text_field_tag :username, @user.username %>
+</p>
+<p>
+  <%= label_tag "password", "Password" %><br>
+  <%= password_field_tag "password" %>
+</p>
+<p>
+  <%= label_tag "password_confirmation", "Confirm Password" %><br>
+  <%= password_field_tag "password_confirmation" %>
+</p>
+<p>
+  <%= submit_tag "Register User" %>
+</p>

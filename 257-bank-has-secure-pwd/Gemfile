@@ -13,7 +13,7 @@ gem 'dynamic_form' # for error_messages_for
 
 gem 'rack-flash3', require: 'rack-flash'
 gem 'sinatra-footnotes'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby'
 gem 'will_paginate', '~> 3.0.0'
 
 gem 'pry'

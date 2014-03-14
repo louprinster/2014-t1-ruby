@@ -15,7 +15,9 @@ post "/login" do
   # Load the values that user filled out for the username and password
   # into variables.
   username = params["username"]
-  password = params["password"]
+#  password = params["password"]
+  attempted_password = params["password"]
+  
  
   # Look for a row in the users table with that same username
   found_user = User.find_by(username: username)
@@ -29,11 +31,15 @@ post "/login" do
     halt erb(:login)
 
   # Otherwise, if the password was wrong...
-  elsif password != found_user.password
-    # Then set a message to show at the top of the page
-    @error = "Incorrect password"
+#   elsif password != found_user.password
+#     # Then set a message to show at the top of the page
+#     @error = "Incorrect password"
+# 
+#     # And render the login page again
+#     halt erb(:login)
 
-    # And render the login page again
+  elsif found_user.authenticate(attempted_password) == false
+    @error = "Incorrect password"
     halt erb(:login)
 
   # Otherwise... (if the username and password was right)

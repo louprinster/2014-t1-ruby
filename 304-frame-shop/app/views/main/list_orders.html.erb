@@ -1,0 +1,24 @@
+
+<h1>Custom Frame Orders </h1>
+
+<table class="table">
+
+  <tr>
+    <th>Material</th>
+    <th>Linear Inches</th>
+    <th>Include Hanging HW</th>
+    <th>Total Price</th>
+    <th>Ordered at</th>
+  </tr>
+  
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.material %></td>
+      <td><%= order.linear_inches %></td>
+      <td><%= order.include_hanging_hardware %></td>
+      <td><%= "$%.2f" % order.total_price %></td>
+      <td><%= order.created_at %></td>
+    </tr>
+  <% end %>
+
+</table>

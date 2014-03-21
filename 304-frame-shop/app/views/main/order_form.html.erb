@@ -1,0 +1,58 @@
+<%= form_tag "/" do %>
+
+<% if flash[:error] != nil %>
+ <div class="alert alert-danger">
+    <%= flash[:error] %>
+ </div>
+<% end %>
+<% if flash[:success] != nil %>
+  <div class="alert alert-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+<% if flash[:info] != nil %>
+  <div class="alert alert-info">
+    <%= flash[:info] %>
+  </div>
+<% end %>
+<% if flash[:warning] != nil %>
+  <div class="alert alert-warning">
+    <%= flash[:warning] %>
+  </div>
+<% end %>
+
+<%= error_messages_for @order %>
+
+<h1>Order a custom frame</h1>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Name of material</th>
+    <th>Base price</th>
+  </tr>
+  <% Material.order(:name).each do |m| %>
+  
+    <tr>
+      <td><%= radio_button_tag "material", m.name, @order.material == m.name %></td>
+      <td><%= label_tag "material", m.name %></td>
+      <td>$<%= "%.2f" % m.base_price %></td>
+    </tr>
+
+  <% end %>
+</table>
+
+<p>
+<%= label_tag "linear_inches", "Number of linear inches" %>
+<%= text_field_tag "linear_inches" %><br>
+(Add $1.00 per inch to base price)
+</p>
+<p>
+<%= check_box_tag "include_hanging_hardware", "on", @order.include_hanging_hardware %>
+<%= label_tag "include_hanging_hardware", "Include hanging hardware?" %><br>
+(Add an extra $0.50 if checked)
+</p>
+<p>
+<%= submit_tag "Place order" %>
+</p>
+<% end %>
